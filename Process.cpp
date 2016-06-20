@@ -1,4 +1,5 @@
 #include <time.h>
+#include "Process.h"
 
 class Process
 {

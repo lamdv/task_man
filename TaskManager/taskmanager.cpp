@@ -28,5 +28,5 @@ void TaskManager::on_endProcess_clicked()
     if(res == QDialog::Rejected)
         return;
 
-    ui -> tableWidget -> insertRow(ui -> tableWidget -> rowCount());
+    ui -> tableWidget -> rowCount();
 }

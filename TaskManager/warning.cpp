@@ -15,10 +15,10 @@ WARNING::~WARNING()
 
 void WARNING::on_buttonBox_accepted()
 {
-    reject();
+    accept();
 }
 
 void WARNING::on_buttonBox_rejected()
 {
-    accept();
+    reject();
 }

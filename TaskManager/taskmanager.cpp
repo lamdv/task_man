@@ -9,18 +9,16 @@ TaskManager::TaskManager(QWidget *parent) : QWidget(parent),
     int last_time;
     QDateTime current = QDateTime::currentDateTime();
 
-
-
-//Set table
-
 //Set main win title
     setWindowTitle("Task Manager");
+
     //periodically refresh table
-    if(current.toTime_t() - last_time > 1)
-    {
+
+//    if(current.toTime_t() - last_time > 1)
+//    {
         fillTable();
-        last_time = current.toTime_t();
-    }
+//        last_time = current.toTime_t();
+//    }
 
       return;
 }
@@ -43,8 +41,10 @@ void TaskManager::fillTable(){
         std::cout << "Failed to run command\n";
         exit(1);
     }
+
     /* Skip the first line */
     fgets(path, sizeof(path)-1, fp);
+
     /* Read the output a line at a time - output it. */
     while (fgets(path, sizeof(path)-1, fp) != NULL) {
         AddFile(path);
@@ -93,44 +93,27 @@ void TaskManager::AddFile(QString s){
 
     //get user
     QStringList mark = s.split(" ", QString::SkipEmptyParts);
-//    s = s.substr(mark+1);
-//    t_user = s.substr(0,mark);
     t_user = mark[0];
 
     //Get id
-//    mark = s.split("\t");
-//    t_id = atoi(mark[1].c_str());
     t_id = mark[1].toInt();
 
     //Get cpu
-//    s = s.substr(mark+1);
-//    mark = s.split("\t");
     t_cpu = mark[2];
 
     //Get mem
-//    s = s.substr(mark+1);
-//    mark = s.split("\t");
     t_mem = mark[3];
 
     //Get vsz
-//    mark = s.split("\t");
-//    t_vsz = atoi(mark[4].c_str());
     t_vsz = mark[4].toInt();
 
     //Get rss
-//    mark = s.split("\t");
-//    t_rss = atoi(mark[5].c_str());
     t_rss = mark[5].toInt();
 
     //Get TTY
-//    s = s.substr(mark+1);
-//    mark = s.split("\t");
     t_tty = mark[6];
 
     //Get STAT
-//    s = s.substr(mark+1);
-//    mark = s.split("\t");
-//    t_stat = s.substr(0,mark);
     t_stat = mark[7];
 
     //Get START

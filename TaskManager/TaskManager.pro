@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         taskmanager.cpp \
-    warning.cpp
+    warning.cpp \
+    Process.cpp
 
 HEADERS  += taskmanager.h \
-    warning.h
+    warning.h \
+    Process.h
 
 FORMS    += taskmanager.ui \
     warning.ui

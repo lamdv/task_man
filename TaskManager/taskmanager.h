@@ -14,6 +14,7 @@ class TaskManager : public QWidget
 public:
     explicit TaskManager(QWidget *parent = 0);
     ~TaskManager();
+    void AddFile(string s);
 
 private slots:
     void on_endProcess_clicked();
